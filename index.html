@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Адвокаты — юридическая помощь</title>
-  <meta name="description" content="Многостраничный бесплатный сайт по теме юриспруденции и адвокатских услуг: услуги, практика, команда, статьи и контакты." />
+  <title>Коллегия Адвокатов «Правовой Стандарт»</title>
+  <meta name="description" content="Коллегия Адвокатов «Правовой Стандарт» — квалифицированная юридическая помощь по всей России, представительство в судах, сопровождение споров, международное право и дела с иностранным элементом." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -19,183 +19,128 @@
       --space-1: 0.25rem; --space-2: 0.5rem; --space-3: 0.75rem; --space-4: 1rem;
       --space-5: 1.25rem; --space-6: 1.5rem; --space-8: 2rem; --space-10: 2.5rem;
       --space-12: 3rem; --space-16: 4rem; --space-20: 5rem;
-      --color-bg: #f7f6f2;
-      --color-surface: #fdfcf9;
-      --color-surface-2: #f1efe9;
-      --color-border: #d7d2c8;
-      --color-divider: #e4e0d7;
-      --color-text: #232019;
-      --color-text-muted: #6f6c63;
-      --color-text-faint: #9c988e;
-      --color-text-inverse: #faf8f4;
-      --color-primary: #123c69;
-      --color-primary-hover: #0d2e50;
-      --color-primary-soft: #d9e3ee;
-      --color-accent: #8b6a3e;
-      --shadow-sm: 0 4px 10px rgba(35,32,25,0.06);
-      --shadow-md: 0 10px 30px rgba(35,32,25,0.10);
+      --color-bg: #f6f1ea;
+      --color-surface: #fcf8f3;
+      --color-surface-2: #efe3d4;
+      --color-border: #d1bda8;
+      --color-divider: #e2d4c4;
+      --color-text: #2e2016;
+      --color-text-muted: #705544;
+      --color-text-faint: #9a826f;
+      --color-text-inverse: #fff8f0;
+      --color-primary: #6a4328;
+      --color-primary-hover: #55331d;
+      --color-primary-soft: #e8d7c4;
+      --color-accent: #b68857;
+      --shadow-sm: 0 4px 10px rgba(46,32,22,0.08);
+      --shadow-md: 0 10px 30px rgba(46,32,22,0.15);
       --radius-sm: 0.4rem; --radius-md: 0.7rem; --radius-lg: 1rem; --radius-xl: 1.4rem;
       --content: 1180px;
       --font-display: 'Playfair Display', Georgia, serif;
       --font-body: 'Inter', Arial, sans-serif;
     }
     [data-theme="dark"] {
-      --color-bg: #151515;
-      --color-surface: #1d1d1d;
-      --color-surface-2: #252525;
-      --color-border: #3a3a3a;
-      --color-divider: #2f2f2f;
-      --color-text: #ece7de;
-      --color-text-muted: #b2ab9e;
-      --color-text-faint: #8f897e;
-      --color-text-inverse: #121212;
-      --color-primary: #7ea6d2;
-      --color-primary-hover: #9dbce0;
-      --color-primary-soft: #233244;
-      --color-accent: #c8a97c;
+      --color-bg: #18110d;
+      --color-surface: #221914;
+      --color-surface-2: #2a2018;
+      --color-border: #4f3a2d;
+      --color-divider: #382a21;
+      --color-text: #f0e5d7;
+      --color-text-muted: #c8ae96;
+      --color-text-faint: #9e836e;
+      --color-text-inverse: #1b130f;
+      --color-primary: #c08a58;
+      --color-primary-hover: #d8a16d;
+      --color-primary-soft: #38271d;
+      --color-accent: #ddb17f;
       --shadow-sm: 0 4px 10px rgba(0,0,0,0.25);
       --shadow-md: 0 10px 30px rgba(0,0,0,0.35);
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body {
-      min-height: 100vh;
-      background: var(--color-bg);
-      color: var(--color-text);
-      font-family: var(--font-body);
-      line-height: 1.6;
-      font-size: var(--text-base);
-    }
+    body { min-height: 100vh; background: var(--color-bg); color: var(--color-text); font-family: var(--font-body); line-height: 1.6; font-size: var(--text-base); }
     a { color: inherit; text-decoration: none; }
     img, svg { display: block; max-width: 100%; }
     button { font: inherit; border: none; background: none; cursor: pointer; }
     .container { width: min(calc(100% - 2rem), var(--content)); margin: 0 auto; }
-    .skip-link {
-      position: absolute; left: -9999px; top: 0;
-    }
-    .skip-link:focus {
-      left: 1rem; top: 1rem; background: var(--color-primary); color: white; padding: .75rem 1rem; border-radius: .5rem; z-index: 30;
-    }
-    .site-header {
-      position: sticky; top: 0; z-index: 20;
-      background: color-mix(in srgb, var(--color-bg) 88%, transparent);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--color-divider);
-    }
-    .header-row {
-      display: flex; align-items: center; justify-content: space-between; gap: 1rem;
-      padding: 0.9rem 0;
-    }
+    .skip-link { position: absolute; left: -9999px; top: 0; }
+    .skip-link:focus { left: 1rem; top: 1rem; background: var(--color-primary); color: white; padding: .75rem 1rem; border-radius: .5rem; z-index: 30; }
+    .site-header { position: sticky; top: 0; z-index: 20; background: color-mix(in srgb, var(--color-bg) 88%, transparent); backdrop-filter: blur(14px); border-bottom: 1px solid var(--color-divider); }
+    .header-row { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 0.9rem 0; }
     .brand { display: flex; align-items: center; gap: 0.85rem; font-weight: 700; }
-    .brand-mark {
-      width: 42px; height: 42px; border-radius: 12px; display: grid; place-items: center;
-      background: linear-gradient(135deg, var(--color-primary-soft), var(--color-surface-2));
-      border: 1px solid var(--color-border);
-    }
+    .brand-mark { width: 42px; height: 42px; border-radius: 12px; display: grid; place-items: center; background: linear-gradient(135deg, var(--color-primary-soft), var(--color-surface-2)); border: 1px solid var(--color-border); }
     nav ul { list-style: none; display: flex; gap: 1.1rem; flex-wrap: wrap; }
     nav a { color: var(--color-text-muted); font-size: var(--text-sm); }
     nav a:hover, nav a.active { color: var(--color-primary); }
     .header-actions { display: flex; align-items: center; gap: .7rem; }
-    .theme-toggle, .menu-toggle {
-      width: 44px; height: 44px; border-radius: 999px; border: 1px solid var(--color-border);
-      background: var(--color-surface);
-      display: grid; place-items: center;
-    }
-    .btn {
-      display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
-      min-height: 46px; padding: 0.85rem 1.2rem; border-radius: 999px; font-weight: 600;
-      transition: .2s ease;
-    }
+    .theme-toggle, .menu-toggle { width: 44px; height: 44px; border-radius: 999px; border: 1px solid var(--color-border); background: var(--color-surface); display: grid; place-items: center; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; min-height: 46px; padding: 0.85rem 1.2rem; border-radius: 999px; font-weight: 600; transition: .2s ease; }
     .btn-primary { background: var(--color-primary); color: var(--color-text-inverse); }
     .btn-primary:hover { background: var(--color-primary-hover); }
-    .btn-secondary { border: 1px solid var(--color-border); background: var(--color-surface); }
+    .btn-secondary { border: 1px solid rgba(255,248,240,0.26); background: rgba(255,248,240,0.10); color: var(--color-text-inverse); }
     .hero {
       padding: clamp(3rem, 6vw, 6rem) 0 4rem;
       background:
-        radial-gradient(circle at top left, color-mix(in srgb, var(--color-primary-soft) 75%, transparent), transparent 42%),
-        var(--color-bg);
+        linear-gradient(rgba(69,40,21,0.46), rgba(55,33,18,0.68)),
+        url('https://pplx-res.cloudinary.com/image/upload/pplx_search_images/6035f8c389e0d6cbe4ac2757cff131eb21866cd1.jpg') center 20%/cover no-repeat;
+      color: var(--color-text-inverse);
     }
-    .hero-grid {
-      display: grid; grid-template-columns: 1.2fr .8fr; gap: 2rem; align-items: center;
-    }
-    .eyebrow {
-      display: inline-block; padding: .45rem .8rem; border-radius: 999px; background: var(--color-primary-soft); color: var(--color-primary);
-      font-size: var(--text-xs); letter-spacing: .06em; text-transform: uppercase; font-weight: 700;
-      margin-bottom: 1rem;
-    }
+    .hero-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 2rem; align-items: center; }
+    .eyebrow { display: inline-block; padding: .45rem .8rem; border-radius: 999px; background: rgba(255,248,240,0.14); color: var(--color-text-inverse); font-size: var(--text-xs); letter-spacing: .06em; text-transform: uppercase; font-weight: 700; margin-bottom: 1rem; }
     h1, h2, h3 { font-family: var(--font-display); line-height: 1.15; }
-    h1 { font-size: var(--text-2xl); max-width: 12ch; margin-bottom: 1rem; }
-    .hero p { max-width: 62ch; color: var(--color-text-muted); margin-bottom: 1.5rem; }
-    .hero-card {
-      background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-xl);
-      padding: 1.4rem; box-shadow: var(--shadow-md);
-    }
-    .hero-stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-top: 1.5rem; }
-    .stat { padding: 1rem; background: var(--color-surface-2); border-radius: var(--radius-lg); border: 1px solid var(--color-divider); }
+    h1 { font-size: var(--text-2xl); max-width: 13ch; margin-bottom: 1rem; }
+    .hero p { max-width: 66ch; color: rgba(255,248,240,0.90); margin-bottom: 1.25rem; }
+    .hero-card, .card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 1.25rem; box-shadow: var(--shadow-sm); }
+    .hero-card { border-radius: var(--radius-xl); padding: 1.4rem; box-shadow: var(--shadow-md); background: rgba(252,248,243,0.97); color: #4a2f1d; }
+    .hero-card h2 { color: #4a2f1d; }
+    .hero-card p { color: #6b4830; }
+    .hero-card li { color: #5b3a25; }
+    .hero-card .tag { background: #ead8c7; color: #6a4328; }
+    .hero-stats, .cards-3, .practice-grid, .team-grid, .blog-grid, .reasons-grid { display: grid; gap: 1.2rem; }
+    .hero-stats { grid-template-columns: repeat(2, 1fr); margin-top: 1.5rem; }
+    .cards-3, .practice-grid, .team-grid, .blog-grid, .reasons-grid { grid-template-columns: repeat(3, 1fr); }
+    .stat { padding: 1rem; background: rgba(255,248,240,0.10); border-radius: var(--radius-lg); border: 1px solid rgba(255,248,240,0.18); backdrop-filter: blur(4px); }
+    .stat strong, .stat span { color: var(--color-text-inverse); }
     .stat strong { display: block; font-size: 1.5rem; font-family: var(--font-display); }
     section { padding: clamp(3rem, 5vw, 5rem) 0; }
     .section-head { display: flex; justify-content: space-between; gap: 1rem; align-items: end; margin-bottom: 2rem; }
-    .section-head p { color: var(--color-text-muted); max-width: 60ch; }
-    .cards-3, .cards-4, .practice-grid, .blog-grid, .team-grid { display: grid; gap: 1.2rem; }
-    .cards-3 { grid-template-columns: repeat(3, 1fr); }
-    .cards-4 { grid-template-columns: repeat(4, 1fr); }
-    .practice-grid { grid-template-columns: repeat(3, 1fr); }
-    .team-grid { grid-template-columns: repeat(3, 1fr); }
-    .blog-grid { grid-template-columns: repeat(3, 1fr); }
-    .card {
-      background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg);
-      padding: 1.25rem; box-shadow: var(--shadow-sm);
-    }
+    .section-head p { color: var(--color-text-muted); max-width: 64ch; }
     .card h3 { font-size: 1.35rem; margin-bottom: .6rem; }
-    .card p, .card li { color: var(--color-text-muted); }
-    .card ul { list-style: none; display: grid; gap: .5rem; margin-top: .8rem; }
-    .card li::before { content: '— '; color: var(--color-accent); }
-    .highlight {
-      background: linear-gradient(180deg, var(--color-surface), var(--color-surface-2));
-      border-block: 1px solid var(--color-divider);
-    }
+    .card p, .card li, .hero-card li { color: var(--color-text-muted); }
+    .card ul, .hero-card ul { list-style: none; display: grid; gap: .5rem; margin-top: .8rem; }
+    .card li::before, .hero-card li::before { content: '— '; color: var(--color-accent); }
+    .highlight { background: linear-gradient(180deg, var(--color-surface), var(--color-surface-2)); border-block: 1px solid var(--color-divider); }
     .timeline { display: grid; gap: 1rem; }
-    .timeline-item {
-      display: grid; grid-template-columns: 110px 1fr; gap: 1rem; align-items: start;
-      padding: 1rem 0; border-bottom: 1px solid var(--color-divider);
-    }
+    .timeline-item { display: grid; grid-template-columns: 120px 1fr; gap: 1rem; align-items: start; padding: 1rem 0; border-bottom: 1px solid var(--color-divider); }
     .timeline-item:last-child { border-bottom: none; }
     .timeline-year { color: var(--color-primary); font-weight: 700; }
-    .cta {
-      background: var(--color-primary); color: var(--color-text-inverse); border-radius: var(--radius-xl);
-      padding: clamp(2rem, 4vw, 3rem);
-      display: grid; grid-template-columns: 1fr auto; gap: 1rem; align-items: center;
-    }
+    .cta { background: var(--color-primary); color: var(--color-text-inverse); border-radius: var(--radius-xl); padding: clamp(2rem, 4vw, 3rem); display: grid; grid-template-columns: 1fr auto; gap: 1rem; align-items: center; }
     .cta p { color: color-mix(in srgb, var(--color-text-inverse) 82%, transparent); }
-    .contacts {
-      display: grid; grid-template-columns: 1fr .9fr; gap: 1.2rem;
-    }
+    .contacts { display: grid; grid-template-columns: 1fr .9fr; gap: 1.2rem; }
     .contact-list { list-style: none; display: grid; gap: .85rem; margin-top: 1rem; }
     .contact-list li { color: var(--color-text-muted); }
     .form { display: grid; gap: .9rem; }
     .form label { font-size: var(--text-sm); font-weight: 600; }
-    .form input, .form textarea, .form select {
-      width: 100%; padding: .9rem 1rem; border-radius: .8rem; border: 1px solid var(--color-border);
-      background: var(--color-bg); color: var(--color-text);
-    }
+    .form input, .form textarea, .form select { width: 100%; padding: .9rem 1rem; border-radius: .8rem; border: 1px solid var(--color-border); background: var(--color-bg); color: var(--color-text); }
     .form textarea { min-height: 130px; resize: vertical; }
     .breadcrumbs { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1.1rem; color: var(--color-text-faint); font-size: var(--text-sm); }
     .subpage { display: none; }
     .subpage.active { display: block; }
-    .footer {
-      padding: 2rem 0 3rem; border-top: 1px solid var(--color-divider); color: var(--color-text-muted);
-    }
+    .footer { padding: 2rem 0 3rem; border-top: 1px solid var(--color-divider); color: var(--color-text-muted); }
     .footer-grid { display: grid; grid-template-columns: 1.2fr .8fr .8fr; gap: 1rem; }
     .menu-toggle { display: none; }
     .muted { color: var(--color-text-muted); }
     .tag { display: inline-block; padding: .25rem .6rem; border-radius: 999px; background: var(--color-primary-soft); color: var(--color-primary); font-size: var(--text-xs); margin-bottom: .8rem; }
+    .note { font-size: var(--text-sm); color: var(--color-text-faint); }
     @media (max-width: 980px) {
-      .hero-grid, .contacts, .cta, .cards-3, .cards-4, .practice-grid, .team-grid, .blog-grid, .footer-grid { grid-template-columns: 1fr; }
+      .hero-grid, .contacts, .cta, .cards-3, .practice-grid, .team-grid, .blog-grid, .footer-grid, .reasons-grid { grid-template-columns: 1fr; }
       nav { display: none; position: absolute; left: 0; right: 0; top: 100%; background: var(--color-bg); border-bottom: 1px solid var(--color-divider); }
       nav.open { display: block; }
       nav ul { flex-direction: column; padding: 1rem; }
       .menu-toggle { display: grid; }
       .header-row { align-items: center; }
+      .hero-stats { grid-template-columns: 1fr 1fr; }
+      .timeline-item { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -206,342 +151,264 @@
       <a href="#home" class="brand" data-link>
         <span class="brand-mark" aria-hidden="true">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-label="Логотип">
-            <path d="M4 9h16"/>
-            <path d="M6 9l6-4 6 4"/>
-            <path d="M7 9v7"/><path d="M12 9v7"/><path d="M17 9v7"/>
-            <path d="M4 18h16"/>
+            <path d="M4 9h16"/><path d="M6 9l6-4 6 4"/><path d="M7 9v7"/><path d="M12 9v7"/><path d="M17 9v7"/><path d="M4 18h16"/>
           </svg>
         </span>
-        <span>Адвокаты</span>
+        <span>Правовой Стандарт</span>
       </a>
       <nav id="site-nav" aria-label="Основная навигация">
         <ul>
           <li><a href="#home" data-link>Главная</a></li>
           <li><a href="#services" data-link>Услуги</a></li>
           <li><a href="#practice" data-link>Практика</a></li>
-          <li><a href="#team" data-link>Команда</a></li>
-          <li><a href="#articles" data-link>Статьи</a></li>
+          <li><a href="#team" data-link>О нас</a></li>
+          <li><a href="#articles" data-link>Публикации</a></li>
           <li><a href="#contacts" data-link>Контакты</a></li>
         </ul>
       </nav>
       <div class="header-actions">
         <button class="menu-toggle" aria-label="Открыть меню" id="menuToggle">☰</button>
-        <button class="theme-toggle" aria-label="Сменить тему" id="themeToggle">
-          <span id="themeIcon">◐</span>
-        </button>
-        <a href="#contacts" data-link class="btn btn-primary">Консультация</a>
+        <button class="theme-toggle" aria-label="Сменить тему" id="themeToggle"><span id="themeIcon">◐</span></button>
+        <a href="#contacts" data-link class="btn btn-primary">Получить консультацию</a>
       </div>
     </div>
   </header>
-
   <main id="content">
     <section id="page-home" class="subpage active">
       <div class="hero">
         <div class="container hero-grid">
           <div>
-            <span class="eyebrow">Юридическая помощь</span>
-            <h1>Защищаем интересы доверителей в суде и в переговорах</h1>
-            <p>Современный сайт адвокатского кабинета или юридической команды: понятные услуги, судебная практика, профили специалистов, статьи и удобная форма для обращения.</p>
+            <span class="eyebrow">Квалифицированная юридическая помощь</span>
+            <h1>Коллегия Адвокатов «Правовой Стандарт»</h1>
+            <p>Оказываем квалифицированную юридическую помощь гражданам, предпринимателям и организациям по всей территории Российской Федерации, а также по вопросам международного права и делам с иностранным элементом.</p>
+            <p>Представляем интересы доверителей в судах, сопровождаем споры, участвуем в переговорах, анализируем документы, подготавливаем процессуальные позиции и обеспечиваем правовую защиту с учётом судебной перспективы и рисков.</p>
             <div style="display:flex; gap:.8rem; flex-wrap:wrap;">
-              <a href="#services" data-link class="btn btn-primary">Смотреть услуги</a>
-              <a href="#practice" data-link class="btn btn-secondary">Изучить практику</a>
+              <a href="#services" data-link class="btn btn-primary">Наши услуги</a>
+              <a href="#contacts" data-link class="btn btn-secondary">Связаться с нами</a>
             </div>
             <div class="hero-stats">
-              <div class="stat"><strong>12+</strong><span>лет юридической практики</span></div>
+              <div class="stat"><strong>По всей России</strong><span>оказываем юридическую помощь доверителям в различных регионах Российской Федерации</span></div>
               <div class="stat"><strong>24/7</strong><span>оперативный первичный отклик</span></div>
-              <div class="stat"><strong>150+</strong><span>дел в гражданской и арбитражной сфере</span></div>
-              <div class="stat"><strong>1 день</strong><span>на предварительный правовой анализ</span></div>
+              <div class="stat"><strong>Бизнес и частные лица</strong><span>правовое сопровождение предпринимателей, компаний и граждан</span></div>
+              <div class="stat"><strong>Международные вопросы</strong><span>сопровождение дел с иностранным элементом и трансграничных ситуаций</span></div>
             </div>
           </div>
-          <aside class="hero-card">
-            <span class="tag">Почему такой сайт работает</span>
-            <h2 style="font-size:var(--text-xl); margin-bottom:.8rem;">Структура, которой доверяют</h2>
-            <ul style="list-style:none; display:grid; gap:.8rem; color:var(--color-text-muted);">
-              <li>Чёткое разделение услуг по направлениям права</li>
-              <li>Отдельный блок судебной практики и кейсов</li>
-              <li>Профили адвокатов с компетенциями и стажем</li>
-              <li>Статьи и FAQ для повышения доверия клиента</li>
-              <li>Быстрая запись на консультацию и контакты</li>
-            </ul>
-          </aside>
+
         </div>
       </div>
-
       <section>
         <div class="container">
-          <div class="section-head">
-            <div>
-              <span class="tag">Ключевые разделы</span>
-              <h2>Что есть на сайте</h2>
-            </div>
-            <p>Этот вариант не одностраничный: разделы открываются как отдельные страницы внутри одного HTML-файла через удобную навигацию, поэтому сайт можно бесплатно открыть локально или выложить на GitHub Pages.</p>
-          </div>
           <div class="cards-3">
             <article class="card">
-              <h3>Услуги</h3>
-              <p>Гражданские, семейные, уголовные, арбитражные и корпоративные споры с кратким описанием подхода и результата.</p>
+              <span class="tag">Первичная правовая навигация</span>
+              <h3>Помогаем выстроить правовую позицию с первого обращения</h3>
+              <p>Проводим первичный анализ ситуации, оцениваем риски, изучаем документы и определяем, какая стратегия защиты или сопровождения будет наиболее эффективной именно в вашем случае.</p>
+              <ul>
+                <li>Оцениваем перспективу спора и правовые риски</li>
+                <li>Определяем порядок дальнейших действий</li>
+                <li>Подготавливаем правовую позицию и документы</li>
+              </ul>
             </article>
             <article class="card">
-              <h3>Судебная практика</h3>
-              <p>Кейсы, категории дел, этапы сопровождения и примеры правовых позиций.</p>
+              <span class="tag">Оперативный старт и практический подход</span>
+              <h3>Выстраиваем работу последовательно и сразу переходим к значимым действиям</h3>
+              <p>С первого контакта формируем понятный порядок взаимодействия, определяем документы, фактическую основу спора и ключевые правовые задачи доверителя.</p>
+              <p>Не ограничиваемся общей консультацией: оцениваем перспективы, готовим позицию, определяем формат защиты и дальнейший процессуальный маршрут.</p>
             </article>
             <article class="card">
-              <h3>Команда и статьи</h3>
-              <p>Профили адвокатов, публикации, ответы на частые вопросы и форма обращения.</p>
+              <span class="tag">Юридическая помощь</span>
+              <h3>Профессиональное сопровождение правовых вопросов</h3>
+              <p>Оказываем квалифицированную правовую помощь по гражданским, арбитражным, корпоративным и международным вопросам, помогая доверителям принимать точные и своевременные решения.</p>
+              <ul>
+                <li>Судебное и внесудебное представительство</li>
+                <li>Подготовка правовой позиции и документов</li>
+                <li>Сопровождение частных лиц и бизнеса</li>
+              </ul>
             </article>
           </div>
         </div>
       </section>
+      <section>
+        <div class="container">
+          <div class="section-head">
+            <div><span class="tag">О коллегии</span><h2>О нас</h2></div>
+            <p>Коллегия Адвокатов «Правовой Стандарт» — это профессиональное объединение адвокатов, деятельность которого основана на принципах законности, независимости, ответственности и добросовестной защиты интересов доверителей.</p>
+          </div>
+          <div class="cards-3">
+            <article class="card"><h3>Кто такой адвокат</h3><p>Важно понимать, что адвокат и юрист — не полностью тождественные понятия. Адвокат — это лицо, получившее специальный статус в порядке, установленном законом, и осуществляющее профессиональную правовую защиту доверителя.</p></article>
+            <article class="card"><h3>Почему это важно</h3><p>Обращение к адвокату особенно важно там, где требуются процессуальная точность, выверенная стратегия, представительство в суде, сложные переговоры и комплексная защита интересов граждан и бизнеса.</p></article>
+            <article class="card"><h3>Наш подход</h3><p>Мы исходим из того, что правовая помощь должна быть не формальной, а глубокой, квалифицированной и ориентированной на реальный правовой результат с учётом закона, практики и рисков доверителя.</p></article>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="container">
+          <div class="section-head">
+            <div><span class="tag">Почему обращаются к адвокатам</span><h2>Профессиональная правовая защита</h2></div>
+            <p>Адвокат — это не просто юрист, а лицо, получившее специальный статус в порядке, установленном законом, и осуществляющее адвокатскую деятельность как независимый профессиональный советник по правовым вопросам.</p>
+          </div>
+          <div class="cards-3">
+            <article class="card"><h3>Квалифицированная юридическая помощь</h3><p>Обращение к адвокату означает получение профессиональной правовой поддержки, основанной на специальном статусе, опыте и глубоком понимании процессуальных механизмов защиты.</p></article>
+            <article class="card"><h3>Выверенная правовая позиция</h3><p>По каждому делу формируется стратегия защиты или сопровождения с учётом фактов, закона, судебной практики, рисков и перспектив правового результата.</p></article>
+            <article class="card"><h3>Судебное и внесудебное представительство</h3><p>Адвокат сопровождает доверителя в переговорах, при подготовке документов, при защите интересов в судах и в иных правовых процедурах.</p></article>
+            <article class="card"><h3>Дела с иностранным элементом</h3><p>Обеспечиваем сопровождение правовых ситуаций, связанных с иностранными контрагентами, международными договорами и трансграничными спорами.</p></article>
+            <article class="card"><h3>Ответственный подход</h3><p>Каждое поручение анализируется внимательно, последовательно и с учётом значимости последствий для доверителя и его правового положения.</p></article>
+            <article class="card"><h3>Конфиденциальность</h3><p>Работа с доверителем строится на профессиональной этике, аккуратном обращении с информацией и уважении к интересам клиента.</p></article>
+          </div>
+        </div>
+      </section>
+      <section class="highlight">
+        <div class="container">
+          <div class="section-head">
+            <div><h2>Преимущества обращения</h2></div>
+            <p>К нам обращаются тогда, когда необходима не просто общая консультация, а профессиональная защита интересов с учётом закона, процессуальных требований, судебной практики и возможных последствий каждого действия.</p>
+          </div>
+          <div class="reasons-grid">
+            <article class="card"><h3>Квалифицированная помощь</h3><p>Мы оказываем профессиональную юридическую помощь гражданам, предпринимателям и организациям по делам различной сложности.</p></article>
+            <article class="card"><h3>Работа по всей России</h3><p>Оказываем услуги очно и дистанционно для доверителей из различных регионов Российской Федерации.</p></article>
+            <article class="card"><h3>Международ-<br>ное право</h3><p>Сопровождаем международные контракты, споры с иностранными контрагентами и иные отношения с иностранным элементом.</p></article>
+          </div>
+        </div>
+      </section>
     </section>
-
     <section id="page-services" class="subpage">
       <div class="container">
         <div class="breadcrumbs"><a href="#home" data-link>Главная</a> / <span>Услуги</span></div>
         <div class="section-head">
-          <div>
-            <span class="tag">Раздел услуг</span>
-            <h2>Юридические направления</h2>
-          </div>
-          <p>Для юридических сайтов хорошо работает отдельная страница услуг с карточками популярных направлений и ссылками на подробное описание помощи.</p>
+          <div><span class="tag">Основные направления</span><h2>Юридические услуги</h2></div>
+          <p>Мы оказываем квалифицированную юридическую помощь по всей России, представляя интересы доверителей в судах, переговорах и в иных правовых процедурах, включая споры с иностранным элементом.</p>
         </div>
         <div class="practice-grid">
-          <article class="card">
-            <h3>Гражданские дела</h3>
-            <p>Споры по договорам, взысканию задолженности, защите права собственности, представительству в судах общей юрисдикции.</p>
-            <ul><li>Анализ документов</li><li>Подготовка исков и отзывов</li><li>Судебное представительство</li></ul>
-          </article>
-          <article class="card">
-            <h3>Семейное право</h3>
-            <p>Развод, алименты, раздел имущества, споры о месте жительства ребёнка и порядке общения.</p>
-            <ul><li>Медиация</li><li>Соглашения и иски</li><li>Защита в суде</li></ul>
-          </article>
-          <article class="card">
-            <h3>Арбитраж</h3>
-            <p>Коммерческие конфликты между компаниями, досудебная работа, сопровождение на всех стадиях спора.</p>
-            <ul><li>Претензионная работа</li><li>Арбитражные иски</li><li>Обжалование решений</li></ul>
-          </article>
-          <article class="card">
-            <h3>Уголовная защита</h3>
-            <p>Защита подозреваемых и обвиняемых, участие на следствии, выработка правовой позиции и сопровождение доверителя.</p>
-            <ul><li>Срочный выезд</li><li>Участие в допросе</li><li>Жалобы и ходатайства</li></ul>
-          </article>
-          <article class="card">
-            <h3>Корпоративное право</h3>
-            <p>Сопровождение бизнеса, договорная работа, комплаенс, защита интересов собственников и руководителей.</p>
-            <ul><li>Проверка рисков</li><li>Разработка документов</li><li>Переговоры</li></ul>
-          </article>
-          <article class="card">
-            <h3>Недвижимость</h3>
-            <p>Сделки, регистрация прав, споры по аренде, изъятию, долевой собственности и строительным договорам.</p>
-            <ul><li>Due diligence</li><li>Правовая экспертиза</li><li>Сопровождение сделки</li></ul>
-          </article>
+          <article class="card"><h3>Гражданские споры</h3><p>Подготовка правовой позиции, сопровождение споров по обязательствам, имуществу, взысканию задолженности и защите нарушенных прав.</p><ul><li>Правовой анализ документов</li><li>Иски, отзывы, жалобы</li><li>Представительство в суде</li></ul></article>
+          <article class="card"><h3>Семейные дела</h3><p>Развод, алименты, раздел имущества, споры о детях, защита интересов доверителя в переговорах и судебном процессе.</p><ul><li>Соглашения и иски</li><li>Медиация и защита позиции</li><li>Судебное сопровождение</li></ul></article>
+          <article class="card"><h3>Арбитражные споры</h3><p>Коммерческие конфликты, договорные споры, взыскание задолженности, претензионная работа и сопровождение бизнеса в арбитражных судах.</p><ul><li>Претензионная стадия</li><li>Арбитражный процесс</li><li>Обжалование судебных актов</li></ul></article>
+          <article class="card"><h3>Уголовно-правовая защита</h3><p>Правовая помощь на стадии проверки, предварительного расследования и судебного разбирательства.</p><ul><li>Срочный выезд адвоката</li><li>Защита на следствии</li><li>Жалобы и ходатайства</li></ul></article>
+          <article class="card"><h3>Корпоративное право</h3><p>Сопровождение бизнеса, защита интересов собственников и руководителей, анализ рисков и подготовка правовых документов.</p><ul><li>Договорная работа</li><li>Проверка рисков</li><li>Сопровождение переговоров</li></ul></article>
+          <article class="card"><h3>Международ-<br>ное право</h3><p>Сопровождение международных контрактов, трансграничных сделок, споров с иностранными контрагентами и дел с иностранным элементом.</p><ul><li>Анализ международных соглашений</li><li>Трансграничные споры</li><li>Правовая помощь иностранным компаниям</li></ul></article>
         </div>
       </div>
     </section>
-
     <section id="page-practice" class="subpage highlight">
       <div class="container">
         <div class="breadcrumbs"><a href="#home" data-link>Главная</a> / <span>Практика</span></div>
         <div class="section-head">
-          <div>
-            <span class="tag">Кейсы</span>
-            <h2>Судебная практика</h2>
-          </div>
-          <p>Кейсы и практика повышают доверие: посетитель видит специализацию, категории дел и ожидаемый порядок работы.</p>
+          <div><span class="tag">Практика и кейсы</span><h2>Направления практики</h2></div>
+          <p>Практика показывает специализацию коллегии, подтверждает опыт работы с различными категориями споров и помогает доверителю понять порядок защиты интересов.</p>
         </div>
         <div class="timeline">
-          <article class="timeline-item">
-            <div class="timeline-year">Арбитраж</div>
-            <div>
-              <h3>Взыскание долга по договору поставки</h3>
-              <p class="muted">Подготовили претензию, собрали доказательства исполнения, взыскали основной долг и неустойку.</p>
-            </div>
-          </article>
-          <article class="timeline-item">
-            <div class="timeline-year">Семья</div>
-            <div>
-              <h3>Раздел совместно нажитого имущества</h3>
-              <p class="muted">Сформировали правовую позицию, добились справедливого распределения активов и исключили спорное имущество из раздела.</p>
-            </div>
-          </article>
-          <article class="timeline-item">
-            <div class="timeline-year">Уголовное</div>
-            <div>
-              <h3>Защита на стадии следствия</h3>
-              <p class="muted">Своевременно заявили ходатайства, оспорили нарушения процедуры и обеспечили активную защиту доверителя.</p>
-            </div>
-          </article>
+          <article class="timeline-item"><div class="timeline-year">Арбитражные споры</div><div><h3>Взыскание задолженности по коммерческому договору</h3><p class="muted">Подготовка претензионной позиции, формирование доказательственной базы, сопровождение спора в арбитражном суде и защита интересов доверителя до вынесения судебного акта.</p></div></article>
+          <article class="timeline-item"><div class="timeline-year">Гражданское право</div><div><h3>Защита имущественных интересов доверителя</h3><p class="muted">Разработка правовой позиции, сопровождение судебного разбирательства и обеспечение надлежащего представительства интересов клиента.</p></div></article>
+          <article class="timeline-item"><div class="timeline-year">Международ-<br>ное право</div><div><h3>Правовое сопровождение спора с иностранным контрагентом</h3><p class="muted">Анализ договорной базы, оценка трансграничных рисков, подготовка правовых документов и выработка стратегии защиты по делу с иностранным элементом.</p></div></article>
         </div>
       </div>
     </section>
-
     <section id="page-team" class="subpage">
       <div class="container">
-        <div class="breadcrumbs"><a href="#home" data-link>Главная</a> / <span>Команда</span></div>
+        <div class="breadcrumbs"><a href="#home" data-link>Главная</a> / <span>О нас</span></div>
         <div class="section-head">
-          <div>
-            <span class="tag">Специалисты</span>
-            <h2>Команда адвокатов</h2>
-          </div>
-          <p>На юридическом сайте важно показывать не только название фирмы, но и конкретных специалистов с их профилем и опытом.</p>
+          <div><span class="tag">Коллегия адвокатов</span><h2>Почему стоит обращаться к адвокатам</h2></div>
+          <p>Обращение к адвокатам означает выбор профессиональной, независимой и ответственной правовой помощи, основанной на специальном статусе, высокой квалификации и законодательно установленном порядке осуществления адвокатской деятельности.</p>
         </div>
         <div class="team-grid">
-          <article class="card">
-            <h3>Анна Соколова</h3>
-            <p>Адвокат по гражданским и семейным делам, специализация — сложные имущественные споры и переговоры.</p>
-          </article>
-          <article class="card">
-            <h3>Илья Воронов</h3>
-            <p>Адвокат по арбитражу и корпоративным конфликтам, сопровождает бизнес-клиентов и договорные споры.</p>
-          </article>
-          <article class="card">
-            <h3>Мария Данилова</h3>
-            <p>Адвокат по уголовной защите, участвует на стадии следствия и в судебных заседаниях.</p>
-          </article>
+          <article class="card"><h3>Специальный статус</h3><p>Адвокат — это не просто специалист с юридическим образованием, а лицо, получившее статус адвоката в установленном законом порядке.</p></article>
+          <article class="card"><h3>Профессиональная защита</h3><p>Адвокатская помощь особенно важна там, где требуются точная правовая позиция, соблюдение процессуальных сроков и судебное представительство.</p></article>
+          <article class="card"><h3>Комплексный подход</h3><p>Мы работаем не только с вопросом права, но и со стратегией защиты, рисками, доказательствами, переговорами и дальнейшими последствиями по делу.</p></article>
         </div>
       </div>
     </section>
-
     <section id="page-articles" class="subpage highlight">
       <div class="container">
-        <div class="breadcrumbs"><a href="#home" data-link>Главная</a> / <span>Статьи</span></div>
+        <div class="breadcrumbs"><a href="#home" data-link>Главная</a> / <span>Публикации</span></div>
         <div class="section-head">
-          <div>
-            <span class="tag">Публикации</span>
-            <h2>Полезные материалы</h2>
-          </div>
-          <p>Статьи и ответы на частые вопросы помогают посетителю понять проблему и повышают авторитет юридического сайта.</p>
+          <div><span class="tag">Информация для доверителей</span><h2>Полезные материалы</h2></div>
+          <p>Публикации помогают доверителю лучше понять правовую ситуацию, подготовиться к обращению и своевременно принять решение о защите своих интересов.</p>
         </div>
         <div class="blog-grid">
-          <article class="card">
-            <h3>Как подготовиться к первой консультации</h3>
-            <p>Какие документы взять, какие даты и факты важно зафиксировать заранее.</p>
-          </article>
-          <article class="card">
-            <h3>Что делать при получении иска</h3>
-            <p>Порядок действий, сроки реакции и типичные ошибки при защите интересов в суде.</p>
-          </article>
-          <article class="card">
-            <h3>Досудебное урегулирование спора</h3>
-            <p>Когда претензия действительно помогает сократить расходы и ускорить решение конфликта.</p>
-          </article>
+          <article class="card"><h3>Когда стоит обращаться именно к адвокату</h3><p>Разъясняем, в каких ситуациях правовая защита требует участия адвоката и чем квалифицированная помощь отличается от общей консультации.</p></article>
+          <article class="card"><h3>Как подготовиться к первой консультации</h3><p>Какие документы и сведения желательно подготовить заранее, чтобы правовой анализ был точным и предметным.</p></article>
+          <article class="card"><h3>Споры с иностранным элементом</h3><p>Что важно учитывать при международных контрактах, трансграничных обязательствах и конфликтах с иностранными контрагентами.</p></article>
         </div>
       </div>
     </section>
-
     <section id="page-contacts" class="subpage">
       <div class="container">
         <div class="breadcrumbs"><a href="#home" data-link>Главная</a> / <span>Контакты</span></div>
         <div class="contacts">
           <div class="card">
-            <span class="tag">Связаться</span>
-            <h2>Контакты и запись</h2>
-            <p class="muted">Замените демонстрационные данные на свои реальные контакты, адрес, мессенджеры и часы приёма.</p>
+            <span class="tag">Контакты</span><h2>Свяжитесь с нами</h2>
+            <p class="muted">Замените демонстрационные данные на фактические контакты коллегии, адрес приёма, телефон, email и мессенджеры.</p>
             <ul class="contact-list">
-              <li><strong>Телефон:</strong> +7 (900) 000-00-00</li>
-              <li><strong>Email:</strong> info@advokaty-site.ru</li>
-              <li><strong>Адрес:</strong> г. Уфа, ул. Примерная, 10</li>
-              <li><strong>График:</strong> Пн–Пт, 09:00–18:00</li>
+              <li><strong>Организация:</strong> Коллегия Адвокатов «Правовой Стандарт»</li>
+              <li><strong>Телефон:</strong> +7 (963) 898-88-87</li>
+              <li><strong>Email:</strong> 1legal.standard@gmail.com</li>
+              <li><strong>Адрес:</strong> 450053, Республика Башкортостан, г. Уфа, Проспект Октября 132/3 (Бизнес Центр КПД), офис 607</li>
+              <li><strong></li>
             </ul>
+            <p class="note"></p>
           </div>
           <div class="card">
             <span class="tag">Форма обращения</span>
             <form class="form" onsubmit="event.preventDefault(); alert('Заявка отправлена в демонстрационном режиме');">
-              <div>
-                <label for="name">Ваше имя</label>
-                <input id="name" type="text" placeholder="Введите имя" />
-              </div>
-              <div>
-                <label for="topic">Тема обращения</label>
-                <select id="topic">
-                  <option>Гражданское дело</option>
-                  <option>Семейный спор</option>
-                  <option>Арбитраж</option>
-                  <option>Уголовная защита</option>
-                </select>
-              </div>
-              <div>
-                <label for="message">Кратко опишите ситуацию</label>
-                <textarea id="message" placeholder="Опишите проблему, сроки и какие документы уже есть"></textarea>
-              </div>
-              <button class="btn btn-primary" type="submit">Отправить заявку</button>
+              <div><label for="name">Ваше имя</label><input id="name" type="text" placeholder="Введите имя" /></div>
+              <div><label for="topic">Тема обращения</label><select id="topic"><option>Гражданский спор</option><option>Арбитражные споры</option><option>Уголовно-правовая защита</option><option>Международ-<br>ное право</option></select></div>
+              <div><label for="message">Кратко опишите ситуацию</label><textarea id="message" placeholder="Опишите проблему, укажите регион, сроки и наличие документов"></textarea></div>
+              <button class="btn btn-primary" type="submit">Отправить обращение</button>
             </form>
           </div>
         </div>
       </div>
     </section>
-
     <section>
       <div class="container">
         <div class="cta">
-          <div>
-            <h2 style="margin-bottom:.5rem;">Готовый бесплатный шаблон уже собран</h2>
-            <p>Его можно редактировать в любом текстовом редакторе, бесплатно разместить на GitHub Pages, Netlify или просто открыть локально в браузере.</p>
-          </div>
-          <a href="#contacts" data-link class="btn btn-secondary" style="background:white; color:#123c69;">Открыть контакты</a>
+          <div><h2 style="margin-bottom:.5rem;">Правовая помощь по всей России и по международным вопросам</h2><p>Коллегия Адвокатов «Правовой Стандарт» сопровождает доверителей в судебных, внесудебных и трансграничных правовых ситуациях, обеспечивая профессиональную защиту интересов на каждом этапе работы.</p></div>
+          <a href="#contacts" data-link class="btn btn-secondary">Оставить заявку</a>
         </div>
       </div>
     </section>
   </main>
-
   <footer class="footer">
     <div class="container footer-grid">
-      <div>
-        <strong>Адвокаты</strong>
-        <p>Демонстрационный многостраничный сайт по теме юриспруденции и адвокатских услуг.</p>
-      </div>
-      <div>
-        <strong>Разделы</strong>
-        <p>Главная, услуги, практика, команда, статьи, контакты.</p>
-      </div>
-      <div>
-        <strong>Размещение</strong>
-        <p>Подходит для бесплатного хостинга и дальнейшей доработки.</p>
-      </div>
+      <div><strong>Коллегия Адвокатов «Правовой Стандарт»</strong><p>Квалифицированная юридическая помощь по всей России и по вопросам международного права.</p></div>
+      <div><strong>Разделы</strong><p>Главная, услуги, практика, о нас, публикации, контакты.</p></div>
+      <div><strong>Публикация</strong><p>Файл готов для загрузки в GitHub Pages под именем index.html.</p></div>
     </div>
   </footer>
-
   <script>
-    const routes = {
-      '#home': 'page-home',
-      '#services': 'page-services',
-      '#practice': 'page-practice',
-      '#team': 'page-team',
-      '#articles': 'page-articles',
-      '#contacts': 'page-contacts'
-    };
-
+    const routes = {'#home':'page-home','#services':'page-services','#practice':'page-practice','#team':'page-team','#articles':'page-articles','#contacts':'page-contacts'};
     const nav = document.getElementById('site-nav');
     const menuToggle = document.getElementById('menuToggle');
     menuToggle?.addEventListener('click', () => nav.classList.toggle('open'));
-
     function renderRoute() {
       const hash = window.location.hash || '#home';
       document.querySelectorAll('.subpage').forEach(el => el.classList.remove('active'));
       const activeId = routes[hash] || 'page-home';
       document.getElementById(activeId)?.classList.add('active');
-      document.querySelectorAll('[data-link]').forEach(link => {
-        link.classList.toggle('active', link.getAttribute('href') === hash);
-      });
+      document.querySelectorAll('[data-link]').forEach(link => link.classList.toggle('active', link.getAttribute('href') === hash));
       nav.classList.remove('open');
-      window.scrollTo({ top: 0, behavior: 'instant' in window ? 'instant' : 'auto' });
+      window.scrollTo({ top: 0, behavior: 'auto' });
     }
     window.addEventListener('hashchange', renderRoute);
     renderRoute();
-
     const root = document.documentElement;
     const themeToggle = document.getElementById('themeToggle');
     const themeIcon = document.getElementById('themeIcon');
     let mode = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    function applyTheme() {
-      root.setAttribute('data-theme', mode);
-      themeIcon.textContent = mode === 'dark' ? '☀' : '◐';
-    }
+    function applyTheme() { root.setAttribute('data-theme', mode); themeIcon.textContent = mode === 'dark' ? '☀' : '◐'; }
     applyTheme();
-    themeToggle.addEventListener('click', () => {
-      mode = mode === 'dark' ? 'light' : 'dark';
-      applyTheme();
-    });
+    themeToggle.addEventListener('click', () => { mode = mode === 'dark' ? 'light' : 'dark'; applyTheme(); });
   </script>
 </body>
 </html>
+
+<style>
+.hero-stats .stat{overflow:hidden;}
+.hero-stats .stat span{display:block;max-width:8rem;line-height:1.25;white-space:normal;overflow-wrap:normal;word-break:normal;}
+.hero-stats .stat br{display:block;}
+@media (min-width: 1200px){
+  .hero-grid{grid-template-columns:minmax(0,1.1fr) minmax(380px,0.9fr);align-items:start;gap:2rem;}
+  .hero-stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;}
+  .hero-stats .stat{min-height:100px;display:flex;flex-direction:column;justify-content:space-between;}
+  .hero-stats .stat span{max-width:7rem;font-size:.92rem;}
+}
+</style>
