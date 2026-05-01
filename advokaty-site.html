@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Адвокаты — юридическая помощь</title>
+  <meta name="description" content="Многостраничный бесплатный сайт по теме юриспруденции и адвокатских услуг: услуги, практика, команда, статьи и контакты." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root, [data-theme="light"] {
+      --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+      --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+      --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+      --text-lg: clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+      --text-xl: clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
+      --text-2xl: clamp(2rem, 1.2rem + 2.5vw, 3.5rem);
+      --space-1: 0.25rem; --space-2: 0.5rem; --space-3: 0.75rem; --space-4: 1rem;
+      --space-5: 1.25rem; --space-6: 1.5rem; --space-8: 2rem; --space-10: 2.5rem;
+      --space-12: 3rem; --space-16: 4rem; --space-20: 5rem;
+      --color-bg: #f7f6f2;
+      --color-surface: #fdfcf9;
+      --color-surface-2: #f1efe9;
+      --color-border: #d7d2c8;
+      --color-divider: #e4e0d7;
+      --color-text: #232019;
+      --color-text-muted: #6f6c63;
+      --color-text-faint: #9c988e;
+      --color-text-inverse: #faf8f4;
+      --color-primary: #123c69;
+      --color-primary-hover: #0d2e50;
+      --color-primary-soft: #d9e3ee;
+      --color-accent: #8b6a3e;
+      --shadow-sm: 0 4px 10px rgba(35,32,25,0.06);
+      --shadow-md: 0 10px 30px rgba(35,32,25,0.10);
+      --radius-sm: 0.4rem; --radius-md: 0.7rem; --radius-lg: 1rem; --radius-xl: 1.4rem;
+      --content: 1180px;
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body: 'Inter', Arial, sans-serif;
+    }
+    [data-theme="dark"] {
+      --color-bg: #151515;
+      --color-surface: #1d1d1d;
+      --color-surface-2: #252525;
+      --color-border: #3a3a3a;
+      --color-divider: #2f2f2f;
+      --color-text: #ece7de;
+      --color-text-muted: #b2ab9e;
+      --color-text-faint: #8f897e;
+      --color-text-inverse: #121212;
+      --color-primary: #7ea6d2;
+      --color-primary-hover: #9dbce0;
+      --color-primary-soft: #233244;
+      --color-accent: #c8a97c;
+      --shadow-sm: 0 4px 10px rgba(0,0,0,0.25);
+      --shadow-md: 0 10px 30px rgba(0,0,0,0.35);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      min-height: 100vh;
+      background: var(--color-bg);
+      color: var(--color-text);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      font-size: var(--text-base);
+    }
+    a { color: inherit; text-decoration: none; }
+    img, svg { display: block; max-width: 100%; }
+    button { font: inherit; border: none; background: none; cursor: pointer; }
+    .container { width: min(calc(100% - 2rem), var(--content)); margin: 0 auto; }
+    .skip-link {
+      position: absolute; left: -9999px; top: 0;
+    }
+    .skip-link:focus {
+      left: 1rem; top: 1rem; background: var(--color-primary); color: white; padding: .75rem 1rem; border-radius: .5rem; z-index: 30;
+    }
+    .site-header {
+      position: sticky; top: 0; z-index: 20;
+      background: color-mix(in srgb, var(--color-bg) 88%, transparent);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--color-divider);
+    }
+    .header-row {
+      display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+      padding: 0.9rem 0;
+    }
+    .brand { display: flex; align-items: center; gap: 0.85rem; font-weight: 700; }
+    .brand-mark {
+      width: 42px; height: 42px; border-radius: 12px; display: grid; place-items: center;
+      background: linear-gradient(135deg, var(--color-primary-soft), var(--color-surface-2));
+      border: 1px solid var(--color-border);
+    }
+    nav ul { list-style: none; display: flex; gap: 1.1rem; flex-wrap: wrap; }
+    nav a { color: var(--color-text-muted); font-size: var(--text-sm); }
+    nav a:hover, nav a.active { color: var(--color-primary); }
+    .header-actions { display: flex; align-items: center; gap: .7rem; }
+    .theme-toggle, .menu-toggle {
+      width: 44px; height: 44px; border-radius: 999px; border: 1px solid var(--color-border);
+      background: var(--color-surface);
+      display: grid; place-items: center;
+    }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+      min-height: 46px; padding: 0.85rem 1.2rem; border-radius: 999px; font-weight: 600;
+      transition: .2s ease;
+    }
+    .btn-primary { background: var(--color-primary); color: var(--color-text-inverse); }
+    .btn-primary:hover { background: var(--color-primary-hover); }
+    .btn-secondary { border: 1px solid var(--color-border); background: var(--color-surface); }
+    .hero {
+      padding: clamp(3rem, 6vw, 6rem) 0 4rem;
+      background:
+        radial-gradient(circle at top left, color-mix(in srgb, var(--color-primary-soft) 75%, transparent), transparent 42%),
+        var(--color-bg);
+    }
+    .hero-grid {
+      display: grid; grid-template-columns: 1.2fr .8fr; gap: 2rem; align-items: center;
+    }
+    .eyebrow {
+      display: inline-block; padding: .45rem .8rem; border-radius: 999px; background: var(--color-primary-soft); color: var(--color-primary);
+      font-size: var(--text-xs); letter-spacing: .06em; text-transform: uppercase; font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    h1, h2, h3 { font-family: var(--font-display); line-height: 1.15; }
+    h1 { font-size: var(--text-2xl); max-width: 12ch; margin-bottom: 1rem; }
+    .hero p { max-width: 62ch; color: var(--color-text-muted); margin-bottom: 1.5rem; }
+    .hero-card {
+      background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-xl);
+      padding: 1.4rem; box-shadow: var(--shadow-md);
+    }
+    .hero-stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-top: 1.5rem; }
+    .stat { padding: 1rem; background: var(--color-surface-2); border-radius: var(--radius-lg); border: 1px solid var(--color-divider); }
+    .stat strong { display: block; font-size: 1.5rem; font-family: var(--font-display); }
+    section { padding: clamp(3rem, 5vw, 5rem) 0; }
+    .section-head { display: flex; justify-content: space-between; gap: 1rem; align-items: end; margin-bottom: 2rem; }
+    .section-head p { color: var(--color-text-muted); max-width: 60ch; }
+    .cards-3, .cards-4, .practice-grid, .blog-grid, .team-grid { display: grid; gap: 1.2rem; }
+    .cards-3 { grid-template-columns: repeat(3, 1fr); }
+    .cards-4 { grid-template-columns: repeat(4, 1fr); }
+    .practice-grid { grid-template-columns: repeat(3, 1fr); }
+    .team-grid { grid-template-columns: repeat(3, 1fr); }
+    .blog-grid { grid-template-columns: repeat(3, 1fr); }
+    .card {
+      background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg);
+      padding: 1.25rem; box-shadow: var(--shadow-sm);
+    }
+    .card h3 { font-size: 1.35rem; margin-bottom: .6rem; }
+    .card p, .card li { color: var(--color-text-muted); }
+    .card ul { list-style: none; display: grid; gap: .5rem; margin-top: .8rem; }
+    .card li::before { content: '— '; color: var(--color-accent); }
+    .highlight {
+      background: linear-gradient(180deg, var(--color-surface), var(--color-surface-2));
+      border-block: 1px solid var(--color-divider);
+    }
+    .timeline { display: grid; gap: 1rem; }
+    .timeline-item {
+      display: grid; grid-template-columns: 110px 1fr; gap: 1rem; align-items: start;
+      padding: 1rem 0; border-bottom: 1px solid var(--color-divider);
+    }
+    .timeline-item:last-child { border-bottom: none; }
+    .timeline-year { color: var(--color-primary); font-weight: 700; }
+    .cta {
+      background: var(--color-primary); color: var(--color-text-inverse); border-radius: var(--radius-xl);
+      padding: clamp(2rem, 4vw, 3rem);
+      display: grid; grid-template-columns: 1fr auto; gap: 1rem; align-items: center;
+    }
+    .cta p { color: color-mix(in srgb, var(--color-text-inverse) 82%, transparent); }
+    .contacts {
+      display: grid; grid-template-columns: 1fr .9fr; gap: 1.2rem;
+    }
+    .contact-list { list-style: none; display: grid; gap: .85rem; margin-top: 1rem; }
+    .contact-list li { color: var(--color-text-muted); }
+    .form { display: grid; gap: .9rem; }
+    .form label { font-size: var(--text-sm); font-weight: 600; }
+    .form input, .form textarea, .form select {
+      width: 100%; padding: .9rem 1rem; border-radius: .8rem; border: 1px solid var(--color-border);
+      background: var(--color-bg); color: var(--color-text);
+    }
+    .form textarea { min-height: 130px; resize: vertical; }
+    .breadcrumbs { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1.1rem; color: var(--color-text-faint); font-size: var(--text-sm); }
+    .subpage { display: none; }
+    .subpage.active { display: block; }
+    .footer {
+      padding: 2rem 0 3rem; border-top: 1px solid var(--color-divider); color: var(--color-text-muted);
+    }
+    .footer-grid { display: grid; grid-template-columns: 1.2fr .8fr .8fr; gap: 1rem; }
+    .menu-toggle { display: none; }
+    .muted { color: var(--color-text-muted); }
+    .tag { display: inline-block; padding: .25rem .6rem; border-radius: 999px; background: var(--color-primary-soft); color: var(--color-primary); font-size: var(--text-xs); margin-bottom: .8rem; }
+    @media (max-width: 980px) {
+      .hero-grid, .contacts, .cta, .cards-3, .cards-4, .practice-grid, .team-grid, .blog-grid, .footer-grid { grid-template-columns: 1fr; }
+      nav { display: none; position: absolute; left: 0; right: 0; top: 100%; background: var(--color-bg); border-bottom: 1px solid var(--color-divider); }
+      nav.open { display: block; }
+      nav ul { flex-direction: column; padding: 1rem; }
+      .menu-toggle { display: grid; }
+      .header-row { align-items: center; }
+    }
+  </style>
+</head>
+<body>
+  <a href="#content" class="skip-link">Перейти к содержимому</a>
+  <header class="site-header">
+    <div class="container header-row">
+      <a href="#home" class="brand" data-link>
+        <span class="brand-mark" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-label="Логотип">
+            <path d="M4 9h16"/>
+            <path d="M6 9l6-4 6 4"/>
+            <path d="M7 9v7"/><path d="M12 9v7"/><path d="M17 9v7"/>
+            <path d="M4 18h16"/>
+          </svg>
+        </span>
+        <span>Адвокаты</span>
+      </a>
+      <nav id="site-nav" aria-label="Основная навигация">
+        <ul>
+          <li><a href="#home" data-link>Главная</a></li>
+          <li><a href="#services" data-link>Услуги</a></li>
+          <li><a href="#practice" data-link>Практика</a></li>
+          <li><a href="#team" data-link>Команда</a></li>
+          <li><a href="#articles" data-link>Статьи</a></li>
+          <li><a href="#contacts" data-link>Контакты</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button class="menu-toggle" aria-label="Открыть меню" id="menuToggle">☰</button>
+        <button class="theme-toggle" aria-label="Сменить тему" id="themeToggle">
+          <span id="themeIcon">◐</span>
+        </button>
+        <a href="#contacts" data-link class="btn btn-primary">Консультация</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="content">
+    <section id="page-home" class="subpage active">
+      <div class="hero">
+        <div class="container hero-grid">
+          <div>
+            <span class="eyebrow">Юридическая помощь</span>
+            <h1>Защищаем интересы доверителей в суде и в переговорах</h1>
+            <p>Современный сайт адвокатского кабинета или юридической команды: понятные услуги, судебная практика, профили специалистов, статьи и удобная форма для обращения.</p>
+            <div style="display:flex; gap:.8rem; flex-wrap:wrap;">
+              <a href="#services" data-link class="btn btn-primary">Смотреть услуги</a>
+              <a href="#practice" data-link class="btn btn-secondary">Изучить практику</a>
+            </div>
+            <div class="hero-stats">
+              <div class="stat"><strong>12+</strong><span>лет юридической практики</span></div>
+              <div class="stat"><strong>24/7</strong><span>оперативный первичный отклик</span></div>
+              <div class="stat"><strong>150+</strong><span>дел в гражданской и арбитражной сфере</span></div>
+              <div class="stat"><strong>1 день</strong><span>на предварительный правовой анализ</span></div>
+            </div>
+          </div>
+          <aside class="hero-card">
+            <span class="tag">Почему такой сайт работает</span>
+            <h2 style="font-size:var(--text-xl); margin-bottom:.8rem;">Структура, которой доверяют</h2>
+            <ul style="list-style:none; display:grid; gap:.8rem; color:var(--color-text-muted);">
+              <li>Чёткое разделение услуг по направлениям права</li>
+              <li>Отдельный блок судебной практики и кейсов</li>
+              <li>Профили адвокатов с компетенциями и стажем</li>
+              <li>Статьи и FAQ для повышения доверия клиента</li>
+              <li>Быстрая запись на консультацию и контакты</li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+
+      <section>
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <span class="tag">Ключевые разделы</span>
+              <h2>Что есть на сайте</h2>
+            </div>
+            <p>Этот вариант не одностраничный: разделы открываются как отдельные страницы внутри одного HTML-файла через удобную навигацию, поэтому сайт можно бесплатно открыть локально или выложить на GitHub Pages.</p>
+          </div>
+          <div class="cards-3">
+            <article class="card">
+              <h3>Услуги</h3>
+              <p>Гражданские, семейные, уголовные, арбитражные и корпоративные споры с кратким описанием подхода и результата.</p>
+            </article>
+            <article class="card">
+              <h3>Судебная практика</h3>
+              <p>Кейсы, категории дел, этапы сопровождения и примеры правовых позиций.</p>
+            </article>
+            <article class="card">
+              <h3>Команда и статьи</h3>
+              <p>Профили адвокатов, публикации, ответы на частые вопросы и форма обращения.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <section id="page-services" class="subpage">
+      <div class="container">
+        <div class="breadcrumbs"><a href="#home" data-link>Главная</a> / <span>Услуги</span></div>
+        <div class="section-head">
+          <div>
+            <span class="tag">Раздел услуг</span>
+            <h2>Юридические направления</h2>
+          </div>
+          <p>Для юридических сайтов хорошо работает отдельная страница услуг с карточками популярных направлений и ссылками на подробное описание помощи.</p>
+        </div>
+        <div class="practice-grid">
+          <article class="card">
+            <h3>Гражданские дела</h3>
+            <p>Споры по договорам, взысканию задолженности, защите права собственности, представительству в судах общей юрисдикции.</p>
+            <ul><li>Анализ документов</li><li>Подготовка исков и отзывов</li><li>Судебное представительство</li></ul>
+          </article>
+          <article class="card">
+            <h3>Семейное право</h3>
+            <p>Развод, алименты, раздел имущества, споры о месте жительства ребёнка и порядке общения.</p>
+            <ul><li>Медиация</li><li>Соглашения и иски</li><li>Защита в суде</li></ul>
+          </article>
+          <article class="card">
+            <h3>Арбитраж</h3>
+            <p>Коммерческие конфликты между компаниями, досудебная работа, сопровождение на всех стадиях спора.</p>
+            <ul><li>Претензионная работа</li><li>Арбитражные иски</li><li>Обжалование решений</li></ul>
+          </article>
+          <article class="card">
+            <h3>Уголовная защита</h3>
+            <p>Защита подозреваемых и обвиняемых, участие на следствии, выработка правовой позиции и сопровождение доверителя.</p>
+            <ul><li>Срочный выезд</li><li>Участие в допросе</li><li>Жалобы и ходатайства</li></ul>
+          </article>
+          <article class="card">
+            <h3>Корпоративное право</h3>
+            <p>Сопровождение бизнеса, договорная работа, комплаенс, защита интересов собственников и руководителей.</p>
+            <ul><li>Проверка рисков</li><li>Разработка документов</li><li>Переговоры</li></ul>
+          </article>
+          <article class="card">
+            <h3>Недвижимость</h3>
+            <p>Сделки, регистрация прав, споры по аренде, изъятию, долевой собственности и строительным договорам.</p>
+            <ul><li>Due diligence</li><li>Правовая экспертиза</li><li>Сопровождение сделки</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="page-practice" class="subpage highlight">
+      <div class="container">
+        <div class="breadcrumbs"><a href="#home" data-link>Главная</a> / <span>Практика</span></div>
+        <div class="section-head">
+          <div>
+            <span class="tag">Кейсы</span>
+            <h2>Судебная практика</h2>
+          </div>
+          <p>Кейсы и практика повышают доверие: посетитель видит специализацию, категории дел и ожидаемый порядок работы.</p>
+        </div>
+        <div class="timeline">
+          <article class="timeline-item">
+            <div class="timeline-year">Арбитраж</div>
+            <div>
+              <h3>Взыскание долга по договору поставки</h3>
+              <p class="muted">Подготовили претензию, собрали доказательства исполнения, взыскали основной долг и неустойку.</p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-year">Семья</div>
+            <div>
+              <h3>Раздел совместно нажитого имущества</h3>
+              <p class="muted">Сформировали правовую позицию, добились справедливого распределения активов и исключили спорное имущество из раздела.</p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-year">Уголовное</div>
+            <div>
+              <h3>Защита на стадии следствия</h3>
+              <p class="muted">Своевременно заявили ходатайства, оспорили нарушения процедуры и обеспечили активную защиту доверителя.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="page-team" class="subpage">
+      <div class="container">
+        <div class="breadcrumbs"><a href="#home" data-link>Главная</a> / <span>Команда</span></div>
+        <div class="section-head">
+          <div>
+            <span class="tag">Специалисты</span>
+            <h2>Команда адвокатов</h2>
+          </div>
+          <p>На юридическом сайте важно показывать не только название фирмы, но и конкретных специалистов с их профилем и опытом.</p>
+        </div>
+        <div class="team-grid">
+          <article class="card">
+            <h3>Анна Соколова</h3>
+            <p>Адвокат по гражданским и семейным делам, специализация — сложные имущественные споры и переговоры.</p>
+          </article>
+          <article class="card">
+            <h3>Илья Воронов</h3>
+            <p>Адвокат по арбитражу и корпоративным конфликтам, сопровождает бизнес-клиентов и договорные споры.</p>
+          </article>
+          <article class="card">
+            <h3>Мария Данилова</h3>
+            <p>Адвокат по уголовной защите, участвует на стадии следствия и в судебных заседаниях.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="page-articles" class="subpage highlight">
+      <div class="container">
+        <div class="breadcrumbs"><a href="#home" data-link>Главная</a> / <span>Статьи</span></div>
+        <div class="section-head">
+          <div>
+            <span class="tag">Публикации</span>
+            <h2>Полезные материалы</h2>
+          </div>
+          <p>Статьи и ответы на частые вопросы помогают посетителю понять проблему и повышают авторитет юридического сайта.</p>
+        </div>
+        <div class="blog-grid">
+          <article class="card">
+            <h3>Как подготовиться к первой консультации</h3>
+            <p>Какие документы взять, какие даты и факты важно зафиксировать заранее.</p>
+          </article>
+          <article class="card">
+            <h3>Что делать при получении иска</h3>
+            <p>Порядок действий, сроки реакции и типичные ошибки при защите интересов в суде.</p>
+          </article>
+          <article class="card">
+            <h3>Досудебное урегулирование спора</h3>
+            <p>Когда претензия действительно помогает сократить расходы и ускорить решение конфликта.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="page-contacts" class="subpage">
+      <div class="container">
+        <div class="breadcrumbs"><a href="#home" data-link>Главная</a> / <span>Контакты</span></div>
+        <div class="contacts">
+          <div class="card">
+            <span class="tag">Связаться</span>
+            <h2>Контакты и запись</h2>
+            <p class="muted">Замените демонстрационные данные на свои реальные контакты, адрес, мессенджеры и часы приёма.</p>
+            <ul class="contact-list">
+              <li><strong>Телефон:</strong> +7 (900) 000-00-00</li>
+              <li><strong>Email:</strong> info@advokaty-site.ru</li>
+              <li><strong>Адрес:</strong> г. Уфа, ул. Примерная, 10</li>
+              <li><strong>График:</strong> Пн–Пт, 09:00–18:00</li>
+            </ul>
+          </div>
+          <div class="card">
+            <span class="tag">Форма обращения</span>
+            <form class="form" onsubmit="event.preventDefault(); alert('Заявка отправлена в демонстрационном режиме');">
+              <div>
+                <label for="name">Ваше имя</label>
+                <input id="name" type="text" placeholder="Введите имя" />
+              </div>
+              <div>
+                <label for="topic">Тема обращения</label>
+                <select id="topic">
+                  <option>Гражданское дело</option>
+                  <option>Семейный спор</option>
+                  <option>Арбитраж</option>
+                  <option>Уголовная защита</option>
+                </select>
+              </div>
+              <div>
+                <label for="message">Кратко опишите ситуацию</label>
+                <textarea id="message" placeholder="Опишите проблему, сроки и какие документы уже есть"></textarea>
+              </div>
+              <button class="btn btn-primary" type="submit">Отправить заявку</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="cta">
+          <div>
+            <h2 style="margin-bottom:.5rem;">Готовый бесплатный шаблон уже собран</h2>
+            <p>Его можно редактировать в любом текстовом редакторе, бесплатно разместить на GitHub Pages, Netlify или просто открыть локально в браузере.</p>
+          </div>
+          <a href="#contacts" data-link class="btn btn-secondary" style="background:white; color:#123c69;">Открыть контакты</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <strong>Адвокаты</strong>
+        <p>Демонстрационный многостраничный сайт по теме юриспруденции и адвокатских услуг.</p>
+      </div>
+      <div>
+        <strong>Разделы</strong>
+        <p>Главная, услуги, практика, команда, статьи, контакты.</p>
+      </div>
+      <div>
+        <strong>Размещение</strong>
+        <p>Подходит для бесплатного хостинга и дальнейшей доработки.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const routes = {
+      '#home': 'page-home',
+      '#services': 'page-services',
+      '#practice': 'page-practice',
+      '#team': 'page-team',
+      '#articles': 'page-articles',
+      '#contacts': 'page-contacts'
+    };
+
+    const nav = document.getElementById('site-nav');
+    const menuToggle = document.getElementById('menuToggle');
+    menuToggle?.addEventListener('click', () => nav.classList.toggle('open'));
+
+    function renderRoute() {
+      const hash = window.location.hash || '#home';
+      document.querySelectorAll('.subpage').forEach(el => el.classList.remove('active'));
+      const activeId = routes[hash] || 'page-home';
+      document.getElementById(activeId)?.classList.add('active');
+      document.querySelectorAll('[data-link]').forEach(link => {
+        link.classList.toggle('active', link.getAttribute('href') === hash);
+      });
+      nav.classList.remove('open');
+      window.scrollTo({ top: 0, behavior: 'instant' in window ? 'instant' : 'auto' });
+    }
+    window.addEventListener('hashchange', renderRoute);
+    renderRoute();
+
+    const root = document.documentElement;
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+    let mode = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    function applyTheme() {
+      root.setAttribute('data-theme', mode);
+      themeIcon.textContent = mode === 'dark' ? '☀' : '◐';
+    }
+    applyTheme();
+    themeToggle.addEventListener('click', () => {
+      mode = mode === 'dark' ? 'light' : 'dark';
+      applyTheme();
+    });
+  </script>
+</body>
+</html>
